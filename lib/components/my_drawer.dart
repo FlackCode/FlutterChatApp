@@ -1,4 +1,4 @@
-import 'package:chatapp/auth/auth_service.dart';
+import 'package:chatapp/services/auth/auth_service.dart';
 import 'package:chatapp/pages/home_page.dart';
 import 'package:chatapp/pages/settings_page.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,7 @@ class MyDrawer extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePage()));
+                            builder: (context) => HomePage()));
                   },
                 ),
               ),
