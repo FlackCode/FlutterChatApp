@@ -1,8 +1,9 @@
 import 'package:chatapp/services/auth/auth_gate.dart';
 import 'package:chatapp/services/consts.dart';
-import 'package:chatapp/themes/light_mode.dart';
+import 'package:chatapp/themes/theme_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,7 +16,10 @@ void main() async {
         projectId: FIREBASE_PROJECT_ID,
       ),
     );
-    runApp(const MyApp());
+    runApp(ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ));
   } catch (e) {
     print("Error initializing Firebase: $e");
   }
@@ -29,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const AuthGate(),
-      theme: lightMode,
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }

@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 class MyTextfield extends StatelessWidget {
   final String hintText;
   final bool? obscureText;
+  final FocusNode? focusNode;
   final TextEditingController controller;
-  const MyTextfield({super.key, required this.hintText, this.obscureText, required this.controller});
+  const MyTextfield(
+      {super.key,
+      required this.hintText,
+      this.obscureText,
+      required this.controller, this.focusNode});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: TextField(
+        focusNode: focusNode,
         obscureText: obscureText ?? false,
         controller: controller,
         decoration: InputDecoration(
