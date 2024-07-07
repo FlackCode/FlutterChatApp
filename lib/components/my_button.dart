@@ -19,7 +19,7 @@ class MyButton extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
       ),
