@@ -1,14 +1,8 @@
-import 'package:chatapp/auth/auth_service.dart';
 import 'package:chatapp/components/my_drawer.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  void logout() {
-    final _auth = AuthService();
-    _auth.signOut();
-  }
+class SettingsPage extends StatelessWidget {
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +11,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Theme.of(context).colorScheme.primary,
         iconTheme: IconThemeData(color: Theme.of(context).colorScheme.tertiary),
         title: Text(
-          'Home',
+          'Settings',
           style: TextStyle(
               color: Theme.of(context).colorScheme.tertiary,
               fontWeight: FontWeight.bold),
