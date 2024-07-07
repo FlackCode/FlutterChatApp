@@ -1,4 +1,4 @@
-import 'package:chatapp/pages/login_page.dart';
+import 'package:chatapp/auth/auth_gate.dart';
 import 'package:chatapp/services/consts.dart';
 import 'package:chatapp/themes/light_mode.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: AuthGate(),
       theme: lightMode,
     );
   }
